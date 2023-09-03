@@ -10,7 +10,9 @@ module Moavia
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
+    config.assets.initialize_on_precompile = false
+    config.assets.css_compressor = nil
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
